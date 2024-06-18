@@ -13,7 +13,7 @@ public class Client {
         BankAccount bankAccount = builder
                 .setAccountHolderName("Monkey D Luffy")
                 .setBalance(BigDecimal.valueOf(3000000))
-                .setDateOfJoining(LocalDateTime.now()).build();
+                /*.setDateOfJoining(LocalDateTime.now())*/.build();
 
         bankAccount.display();
     }

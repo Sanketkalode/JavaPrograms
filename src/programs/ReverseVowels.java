@@ -44,6 +44,6 @@ public class ReverseVowels {
     }
 
     public static void main(String[] args) {
-        System.out.println(reverseVowels("ai"));
+        System.out.println(reverseVowels("aijiom"));
     }
 }

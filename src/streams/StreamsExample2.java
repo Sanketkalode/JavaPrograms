@@ -25,7 +25,6 @@ public class StreamsExample2 {
         // creating list of even numbers
         int countEven = (int) integers.stream()
                 .filter(i -> i %2 == 0).distinct()
-                .peek(System.out::println)
                 .count();
         System.out.println(STR."Total even numbers in list: \{countEven}");
 
@@ -40,5 +39,10 @@ public class StreamsExample2 {
         System.out.println(STR."Sum of all the numbers: \{sum}");
 
         System.out.println(integers);
+
+        boolean five = integers.stream().anyMatch(integer -> integer == 5);
+        System.out.println(five);
+
+        System.out.println(integers.stream().count());
     }
 }

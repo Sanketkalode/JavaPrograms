@@ -1,4 +1,4 @@
-package predicate;
+package functionalInterface.predicate;
 
 /*
 * The next thing that you need to understand is Functional Interface.

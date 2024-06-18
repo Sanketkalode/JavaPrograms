@@ -9,35 +9,21 @@ public class MergeStringsAlternately {
 		MergeStringsAlternately m1 = new MergeStringsAlternately();
 		System.out.println(m1.mergeAlternately("abcd","pq"));
 	}
-	
+
     String mergeAlternately(String word1, String word2) {
-        int word1len = word1.length();
-        int word2len = word2.length();
-        boolean flag = true;
-        String word = "";
-        int i = 0;
+        StringBuilder word = new StringBuilder();
+        int length = Math.min(word1.length(), word2.length());
 
-        while(flag){
-            word = word + word1.charAt(i) + word2.charAt(i);
-            i++;
-            word1len--;
-            word2len--;
-            if (word1len == 0){
-                for (int j =i ; j<word2.length(); j++){
-                    word = word + word2.charAt(j);
-                }
-                flag = false;
-            }
-            else if (word2len == 0){
-                for (int j =i ; j<word1.length(); j++){
-                    word = word + word1.charAt(j);
-                }
-                flag = false;
-            }
+        for (int i = 0; i < length; i++) {
+            word.append(word1.charAt(i)).append(word2.charAt(i));
         }
-        
-        List<Integer> a = new ArrayList<Integer>();
 
-        return word;
+        if (word1.length() > length) {
+            word.append(word1.substring(length));
+        } else if (word2.length() > length) {
+            word.append(word2.substring(length));
+        }
+
+        return word.toString();
     }
 }

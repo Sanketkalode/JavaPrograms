@@ -1,4 +1,4 @@
-package predicate;
+package functionalInterface.predicate;
 
 import java.util.List;
 import java.util.Random;
