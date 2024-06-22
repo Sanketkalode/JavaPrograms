@@ -15,16 +15,5 @@ public class FunctionalInterfaceExample2 {
 
         Functional print = () -> System.out.println("Hello World");
         print.printHello();
-
-        long start =  (System.currentTimeMillis());
-        int count = 0;
-        for (int i = 0; i < 10000; i++) {
-            count++;
-
-        }
-//        Thread.sleep(3);
-        long end =  System.currentTimeMillis();
-        System.out.println(end - start);
-
     }
 }

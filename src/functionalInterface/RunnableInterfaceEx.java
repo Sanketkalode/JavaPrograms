@@ -9,25 +9,21 @@ import java.util.concurrent.*;
 public class RunnableInterfaceEx {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(1);
 
-        Runnable runnable = new Runnable() {
-            public void run() {
-                try {
-                    Thread.sleep(300);
-                    System.out.println("Inside Runnable Interface");
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+        Runnable runnable = () -> {
+            try {
+                Thread.sleep(300);
+                System.out.println("Inside Runnable Interface");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         };
 
-        Callable<String> callable = new Callable<String>() {
-            public String call() throws Exception {
-                Thread.sleep(300);
-                System.out.println("Inside Callable Interface");
-                return "Returning from Callable Interface";
-            }
+        Callable<String> callable = () -> {
+            Thread.sleep(300);
+            System.out.println("Inside Callable Interface");
+            return "Returning from Callable Interface";
         };
 
         executor.submit(runnable);
