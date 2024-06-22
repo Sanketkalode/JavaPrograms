@@ -10,10 +10,11 @@ interface Functional {
     void printHello();
 }
 
-public class FunctionalInterfaceExample2 implements Functional {
+public class FunctionalInterfaceExample2 {
     public static void main(String[] args) throws InterruptedException {
-        FunctionalInterfaceExample2 example2 = new FunctionalInterfaceExample2();
-        example2.printHello();
+
+        Functional print = () -> System.out.println("Hello World");
+        print.printHello();
 
         long start =  (System.currentTimeMillis());
         int count = 0;
@@ -25,10 +26,5 @@ public class FunctionalInterfaceExample2 implements Functional {
         long end =  System.currentTimeMillis();
         System.out.println(end - start);
 
-    }
-
-    @Override
-    public void printHello() {
-        System.out.println("Hello");
     }
 }
