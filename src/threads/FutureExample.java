@@ -24,9 +24,12 @@ public class FutureExample {
         });
         while (!future.isDone()) {
             System.out.println("Future is not done");
-            System.out.println(future.get());
-            executorService.shutdown();
+            Thread.sleep(500);
+
         }
+
+        System.out.println(future.get());
+        executorService.shutdown();
         System.out.println("Main thread complete");
 
     }

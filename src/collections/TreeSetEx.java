@@ -26,7 +26,7 @@ public class TreeSetEx {
 
 		Random op = new Random();
 
-		Set<Integer> set = new TreeSet<>();
+		TreeSet<Integer> set = new TreeSet<>();
 
 		for (int i = 0; i < 10; i++) {
 			int num = op.nextInt(100);
@@ -35,6 +35,9 @@ public class TreeSetEx {
 		}
 		
 		System.out.println(set);
+		System.out.println("first element which is greter than 42 in set: "+set.higher(42));
+
+
 	}
 
 }
